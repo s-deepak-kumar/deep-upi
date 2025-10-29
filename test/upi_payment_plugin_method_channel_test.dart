@@ -1,12 +1,12 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:upi_payment_plugin/upi_payment_plugin_method_channel.dart';
+import 'package:deep_upi/upi_payment_plugin_method_channel.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   MethodChannelUpiPaymentPlugin platform = MethodChannelUpiPaymentPlugin();
-  const MethodChannel channel = MethodChannel('upi_payment_plugin');
+  const MethodChannel channel = MethodChannel('deep_upi');
 
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(

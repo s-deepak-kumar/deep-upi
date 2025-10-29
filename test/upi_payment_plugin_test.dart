@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:upi_payment_plugin/upi_payment_plugin.dart';
-import 'package:upi_payment_plugin/upi_payment_plugin_platform_interface.dart';
-import 'package:upi_payment_plugin/upi_payment_plugin_method_channel.dart';
+import 'package:deep_upi/upi_payment_plugin.dart';
+import 'package:deep_upi/upi_payment_plugin_platform_interface.dart';
+import 'package:deep_upi/upi_payment_plugin_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockUpiPaymentPluginPlatform

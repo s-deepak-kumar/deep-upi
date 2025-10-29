@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:deep_upi/model/upi_app_model.dart';
 
 class UpiPaymentPlugin {
@@ -14,7 +15,7 @@ class UpiPaymentPlugin {
           .map((app) => UpiAppModel.fromMap(Map<String, dynamic>.from(app)))
           .toList();
     } on PlatformException catch (e) {
-      print("Error fetching UPI apps: ${e.message}");
+      debugPrint("Error fetching UPI apps: ${e.message}");
       return [];
     }
   }
@@ -43,7 +44,7 @@ class UpiPaymentPlugin {
           }) ??
           '';
     } on PlatformException catch (e) {
-      print("Error generating signature: ${e.message}");
+      debugPrint("Error generating signature: ${e.message}");
       return '';
     }
   }
@@ -83,7 +84,7 @@ class UpiPaymentPlugin {
             'amount': amount.toStringAsFixed(2),
             if (isMerchant && transactionId != null) 'transactionId': transactionId,
             if (transactionNote != null) 'transactionNote': transactionNote,
-            if (isMerchant && merchantCode != null && merchantCode.isNotEmpty) 'merchantCode': merchantCode,
+            if (isMerchant) 'merchantCode': merchantCode,
             if (isMerchant && link != null && link.isNotEmpty) 'link': link,
             if (isMerchant && transactionRefId != null && transactionRefId.isNotEmpty) 'transactionRefId': transactionRefId,
             if (packageName != null && packageName.isNotEmpty) 'packageName': packageName,
@@ -91,7 +92,7 @@ class UpiPaymentPlugin {
           }) ??
           'UPI Payment Failed';
     } on PlatformException catch (e) {
-      print("Error initiating UPI Payment: ${e.message}");
+      debugPrint("Error initiating UPI Payment: ${e.message}");
       return 'Error: ${e.message}';
     }
   }
