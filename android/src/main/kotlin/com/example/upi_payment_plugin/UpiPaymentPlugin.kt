@@ -110,12 +110,13 @@ class UpiPaymentPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, Activit
 
         appendIfNonEmpty("pn", args["payeeName"])
         appendIfNonEmpty("tn", args["transactionNote"])
+        // Allow identifiers in P2P
+        appendIfNonEmpty("tid", args["transactionId"])
+        appendIfNonEmpty("tr", args["transactionRefId"])
 
         val merchantCode = args["merchantCode"]?.trim()
         if (!merchantCode.isNullOrEmpty()) {
             builder.appendQueryParameter("mc", merchantCode)
-            appendIfNonEmpty("tid", args["transactionId"])
-            appendIfNonEmpty("tr", args["transactionRefId"])
             appendIfNonEmpty("url", args["link"])
             appendIfNonEmpty("sign", args["sign"])
         }

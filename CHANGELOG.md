@@ -9,3 +9,9 @@
 * Default to P2P flow when `merchantCode` is empty or null.
 * Update example and README to P2P-first usage.
 * iOS: add `deep_upi.podspec` and remove old podspec.
+
+## 0.0.5
+
+* Allow `transactionRefId` (tr) and `transactionId` (tid) in P2P flows for reconciliation.
+* Keep `mc`, `url`, `sign` merchant-only.
+* Update example and README to include `tr` and `tid` usage.

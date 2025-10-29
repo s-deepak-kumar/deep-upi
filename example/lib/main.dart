@@ -34,7 +34,9 @@ class _MyAppState extends State<MyApp> {
       payeeUpiId: 'upi@id',
       payeeName: 'payeeName',
       amount: 1.0,
-      // P2P flow (no merchant): do not pass merchant fields
+      // P2P flow with identifiers for reconciliation (no merchant fields)
+      transactionId: 'ATTEMPT-1',
+      transactionRefId: 'ORDER-12345',
       transactionNote: 'Test Transaction',
       packageName: 'com.google.android.apps.nbu.paisa.user',
     );

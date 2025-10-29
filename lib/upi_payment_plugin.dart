@@ -82,11 +82,11 @@ class UpiPaymentPlugin {
             'payeeUpiId': payeeUpiId,
             if (payeeName != null) 'payeeName': payeeName,
             'amount': amount.toStringAsFixed(2),
-            if (isMerchant && transactionId != null) 'transactionId': transactionId,
+            if (transactionId != null) 'transactionId': transactionId,
             if (transactionNote != null) 'transactionNote': transactionNote,
             if (isMerchant) 'merchantCode': merchantCode,
             if (isMerchant && link != null && link.isNotEmpty) 'link': link,
-            if (isMerchant && transactionRefId != null && transactionRefId.isNotEmpty) 'transactionRefId': transactionRefId,
+            if (transactionRefId != null && transactionRefId.isNotEmpty) 'transactionRefId': transactionRefId,
             if (packageName != null && packageName.isNotEmpty) 'packageName': packageName,
             if (isMerchant && sign.isNotEmpty) 'sign': sign,
           }) ??

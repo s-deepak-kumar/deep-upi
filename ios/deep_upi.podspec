@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'deep_upi'
-  s.version          = '0.0.1'
+  s.version          = '0.0.5'
   s.summary          = 'A Flutter plugin for UPI intents (P2P and merchant).'
   s.description      = <<-DESC
 A Flutter plugin to launch UPI payment applications on iOS towards making UPI payments.

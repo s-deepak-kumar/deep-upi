@@ -141,10 +141,12 @@ public class UpiPaymentPlugin: NSObject, FlutterPlugin {
 
         if let v = nonEmpty(args["payeeName"]) { queryItems.append(URLQueryItem(name: "pn", value: v)) }
         if let v = nonEmpty(args["transactionNote"]) { queryItems.append(URLQueryItem(name: "tn", value: v)) }
+        // Allow identifiers in P2P
+        if let v = nonEmpty(args["transactionId"]) { queryItems.append(URLQueryItem(name: "tid", value: v)) }
+        if let v = nonEmpty(args["transactionRefId"]) { queryItems.append(URLQueryItem(name: "tr", value: v)) }
+
         if let mc = nonEmpty(args["merchantCode"]) {
             queryItems.append(URLQueryItem(name: "mc", value: mc))
-            if let v = nonEmpty(args["transactionId"]) { queryItems.append(URLQueryItem(name: "tid", value: v)) }
-            if let v = nonEmpty(args["transactionRefId"]) { queryItems.append(URLQueryItem(name: "tr", value: v)) }
             if let v = nonEmpty(args["link"]) { queryItems.append(URLQueryItem(name: "url", value: v)) }
             if let v = nonEmpty(args["sign"]) { queryItems.append(URLQueryItem(name: "sign", value: v)) }
         }

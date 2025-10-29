@@ -15,7 +15,7 @@ Add the package to your **pubspec.yaml** file:
 
 ```yaml
 dependencies:
-  deep_upi: ^0.0.1
+  deep_upi: ^0.0.5
 ```
 Then, run:
 ```sh
@@ -90,11 +90,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   void initiateUPIPayment() {
-    // P2P flow (no merchant fields)
+    // P2P flow with identifiers (no merchant fields)
     UpiPaymentPlugin.initiateUPIPayment(
       payeeUpiId: 'upi@id',
       payeeName: 'payeeName',
       amount: 1.0,
+      transactionId: 'ATTEMPT-1',
+      transactionRefId: 'ORDER-12345',
       transactionNote: 'Test Transaction',
       packageName: 'com.google.android.apps.nbu.paisa.user',
     );
